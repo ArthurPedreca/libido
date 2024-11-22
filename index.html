@@ -37,6 +37,37 @@
             color: #ff79c6;
         }
 
+        /* Aplica a animação a todos os elementos <a> */
+        a {
+            display: inline-block;
+            /* Necessário para que o efeito funcione corretamente */
+            transition: transform 0.3s ease-in-out;
+            animation: bounce 1.5s infinite;
+            /* Animação contínua */
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+                /* Tamanho normal */
+            }
+
+            50% {
+                transform: scale(1.1);
+                /* Aumenta 10% */
+            }
+        }
+
+        /* Para hover, mantém uma animação mais suave */
+        a:hover {
+            transform: scale(1.2);
+            /* Aumenta mais ao passar o mouse */
+            transition: transform 0.2s ease-in-out;
+        }
+
+
         * {
             font-family: 'Montserrat' !important;
         }
@@ -289,7 +320,7 @@
             Única no Sexo e Deixe ele Enfeitiçado por Você</h1>
         <p data-aos="fade-up">Tenha Acesso as Aulas mais Práticas e Incríveis com Segredos Únicos que deixa ele Louco
             por você!</p>
-        <a href="#" class="btn btn-primary btn-lg mt-3" data-aos="zoom-in">Quero Acessar as Aulas!</a>
+        <a href="#oferta" class="btn btn-primary btn-lg mt-3" data-aos="zoom-in">Quero Acessar as Aulas!</a>
     </div>
 
     <!-- Seção Sobre o Curso -->
@@ -376,7 +407,7 @@
             <img src="./images/curso(2).gif" alt="Conteúdo do Curso" width="50%" class="img-fluid rounded">
         </div>
     </div>
-    
+
 
     <!-- Seção Depoimentos -->
     <div class="container testimonials my-5">
@@ -424,7 +455,7 @@
         <h2 data-aos="fade-up">Pronta para Mudar Sua Vida?</h2>
         <p data-aos="fade-up" data-aos-delay="100">Não deixe para depois o que pode transformar seu presente. As vagas
             são limitadas!</p>
-        <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="200">Quero Acessar as Aulas</a>
+        <a href="#oferta" class="cta-button" data-aos="zoom-in" data-aos-delay="200">Quero Acessar as Aulas</a>
     </div>
 
     <div class="col-12 col-md-6 w-full d-flex justify-content-center" data-aos="fade-left">
@@ -478,7 +509,7 @@
 
 
     <!-- Seção Preço e Oferta -->
-    <div class="container pricing text-center my-5 p-4" style="background-color: #1e1e1e; border-radius: 10px;">
+    <div  class="container pricing text-center my-5 p-4" style="background-color: #1e1e1e; border-radius: 10px;">
         <h4 style="color: #fff;">CURSO COMPLETO <span id="original-price">€199,90</span></h4>
         <h3 class="mt-3" style="color: #ff79c6;">Total: <span id="discounted-price"
                 style="text-decoration: line-through; color: #ff79c6;">€199,90</span></h3>
@@ -493,7 +524,7 @@
                 esse preço</strong>!
         </p>
 
-        <div class="mt-4 p-3" style="border: 2px solid #ff79c6; border-radius: 10px; background-color: #2a2a2a;">
+        <div id="oferta" class="mt-4 p-3" style="border: 2px solid #ff79c6; border-radius: 10px; background-color: #2a2a2a;">
             <h4 style="color: #ff79c6;">Aulas do Curso Intimflex</h4>
             <ul class="list-unstyled mt-3" style="color: #fff; text-align: left; max-width: 400px; margin: 0 auto;">
                 <li>✔ Curso com Aulas gravadas</li>
@@ -507,7 +538,8 @@
             <h3 style="color: #fff;"><span style="color: #ff79c6; font-size: 2.5rem;"><span
                         id="full-price"></span></span> à vista.
             </h3>
-            <a href="#" class="btn btn-success btn-lg mt-3" style="background-color: #28a745; font-weight: bold;">Acessar as Aulas!</a>
+            <a href="https://cardiofit.mycartpanda.com/checkout/164789131:1" class="btn btn-success btn-lg mt-3"
+                style="background-color: #28a745; font-weight: bold;">Acessar as Aulas!</a>
         </div>
     </div>
 
@@ -583,7 +615,7 @@
         <h2 data-aos="fade-up">A Decisão Está em Suas Mãos</h2>
         <p data-aos="fade-up" data-aos-delay="100">Não deixe que a oportunidade passe. Dê o primeiro passo rumo à vida
             que você sempre desejou.</p>
-        <a href="#" class="btn btn-primary btn-lg" data-aos="zoom-in" data-aos-delay="200">Quero Acessar as Aulas</a>
+        <a href="#oferta" class="btn btn-primary btn-lg" data-aos="zoom-in" data-aos-delay="200">Quero Acessar as Aulas</a>
     </div>
 
 
