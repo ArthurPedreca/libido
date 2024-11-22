@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso Intimflex - Redescubra Seu Poder Feminino</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+    <style>
+        /* Estilos Personalizados */
+
+        .bonus-icon i {
+            color: #d63384;
+            /* Substitua por sua cor principal */
+            transition: color 0.3s ease;
+            /* Adiciona um efeito de transição */
+        }
+
+        .bonus-icon i:hover {
+            color: #c12f76;
+            /* Cor de destaque ao passar o mouse */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f8;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('./images/empoderada.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            animation: fadeInDown 1s ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        .btn-primary {
+            background-color: #d63384;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #c12f76;
+        }
+
+        .section-title {
+            margin-bottom: 3rem;
+            color: #d63384;
+            font-family: 'Playfair Display', serif;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 50px;
+            height: 3px;
+            background-color: #d63384;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+        }
+
+        .benefits .card {
+            border: none;
+            background: none;
+            text-align: center;
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .benefits .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .benefits .card img {
+            width: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .testimonials blockquote {
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .pricing {
+            background-color: #fbeaf1;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+        }
+
+        .pricing h2 {
+            font-size: 2.5rem;
+            color: #d63384;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .faq .accordion-button {
+            background-color: #fbeaf1;
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        .instructor img {
+            border: 5px solid #d63384;
+            transition: transform 0.3s ease;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .instructor img:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #d63384;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        .cta-button {
+            background-color: #d63384;
+            border: none;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #c12f76;
+        }
+
+        /* Animações */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .instructor .d-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .instructor img {
+                margin-bottom: 1rem;
+            }
+
+            .pricing h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .footer-link {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #d63384;
+            /* Altere para a cor desejada */
+        }
+
+        .social-icon {
+            color: #fff;
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #d63384;
+            /* Altere para a cor desejada */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Seção Hero -->
+    <div class="hero">
+        <h1 data-aos="fade-down">Sinta-se Poderosa e Desejada Novamente</h1>
+        <p data-aos="fade-up">Você tem sentido que algo falta na sua vida íntima? Descubra como recuperar sua confiança
+            e transformar seus relacionamentos.</p>
+        <a href="#" class="btn btn-primary btn-lg mt-3" data-aos="zoom-in">Quero Me Transformar Agora</a>
+    </div>
+
+    <!-- Seção Sobre o Curso -->
+    <div class="container my-5" data-aos="fade-up">
+        <h2 class="text-center section-title">Você Merece Ser Plenamente Feliz</h2>
+        <p class="text-center">Se os dias passam e você sente que sua vida íntima não é mais a mesma, saiba que você não
+            está sozinha. Muitas mulheres enfrentam desafios que afetam sua autoestima e bem-estar. O <strong>Curso
+                Intimflex</strong> foi criado especialmente para ajudá-la a resgatar sua essência feminina e viver
+            momentos inesquecíveis.</p>
+    </div>
+
+    <!-- Seção Benefícios -->
+    <div class="container benefits">
+        <h2 class="text-center section-title" data-aos="fade-up">Imagine Como Seria Se Você...</h2>
+        <div class="row g-4">
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card">
+                    <img src="./images/autoestima.jpg" alt="Autoestima">
+                    <div class="card-body">
+                        <h5 class="card-title">Reconstruísse Sua Autoestima</h5>
+                        <p class="card-text">Sentir-se segura e confiante em todas as situações, irradiando
+                            autoconfiança.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card">
+                    <img src="./images/intima.jpg" alt="Saúde Íntima">
+                    <div class="card-body">
+                        <h5 class="card-title">Melhorasse Sua Saúde Íntima</h5>
+                        <p class="card-text">Descobrisse técnicas que revitalizam seu corpo e mente, proporcionando
+                            bem-estar.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card">
+                    <img src="./images/relacionamento" alt="Relacionamentos" width="80px" height="80px">
+                    <div class="card-body">
+                        <h5 class="card-title">Revigorasse Seus Relacionamentos</h5>
+                        <p class="card-text">Criasse conexões mais profundas e apaixonadas com seu parceiro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Problema -->
+    <div class="container my-5" data-aos="fade-up">
+        <h2 class="text-center section-title">Você Já Sentiu Que...</h2>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">A chama da paixão está se apagando?</li>
+            <li class="list-group-item">Sua autoestima não é mais a mesma?</li>
+            <li class="list-group-item">Falta confiança para experimentar novas sensações?</li>
+            <li class="list-group-item">Deseja mais conexão e intimidade no relacionamento?</li>
+        </ul>
+        <p class="text-center mt-4">Se você se identificou com alguma dessas situações, o <strong>Curso
+                Intimflex</strong> é a solução que você procura.</p>
+    </div>
+
+    <!-- Seção Como Funciona -->
+    <div class="container my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Como o Intimflex Vai Mudar Sua Vida</h2>
+        <div class="row text-center">
+            <div class="col-12 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                <img src="./images/increvase.jpg" alt="Inscrição" width="100px">
+                <h5 class="mt-3">1. Inscreva-se Agora</h5>
+                <p>Garanta seu acesso imediato ao curso e dê o primeiro passo para a transformação.</p>
+            </div>
+            <div class="col-12 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                <img src="./images/profissional.jpg" alt="Acesso" width="100px">
+                <h5 class="mt-3">2. Aprenda com Especialistas</h5>
+                <p>Conteúdo exclusivo e técnicas comprovadas para você aplicar no seu dia a dia.</p>
+            </div>
+            <div class="col-12 col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                <img src="./images/transformação.jpg" alt="Transformação" width="100px">
+                <h5 class="mt-3">3. Viva a Transformação</h5>
+                <p>Sinta-se mais confiante, realizada e feliz em todas as áreas da sua vida.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Depoimentos -->
+    <div class="container testimonials my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Depoimentos de Quem Já Transformou Sua Vida</h2>
+        <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel" data-aos="zoom-in">
+            <div class="carousel-inner">
+                <!-- Depoimento 1 -->
+                <div class="carousel-item active">
+                    <blockquote class="blockquote text-center">
+                        <p>"Eu me sentia insegura e distante do meu parceiro. Após o Intimflex, nossa relação se renovou
+                            e me sinto outra mulher."</p>
+                        <p class="blockquote-footer">Juliana Mendes</p>
+                    </blockquote>
+                </div>
+                <!-- Depoimento 2 -->
+                <div class="carousel-item">
+                    <blockquote class="blockquote text-center">
+                        <p>"Achei que não teria mais solução para meu casamento. O curso me mostrou que a mudança começa
+                            em mim. Hoje, vivemos uma lua de mel eterna."</p>
+                        <p class="blockquote-footer">Fernanda Souza</p>
+                    </blockquote>
+                </div>
+                <!-- Depoimento 3 -->
+                <div class="carousel-item">
+                    <blockquote class="blockquote text-center">
+                        <p>"A Ana Cristina é simplesmente incrível. Com suas orientações, resgatei minha autoestima e
+                            descobri uma nova mulher em mim."</p>
+                        <p class="blockquote-footer">Mariana Silva</p>
+                    </blockquote>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Seção Chamada para Ação -->
+    <div class="container text-center my-5">
+        <h2 data-aos="fade-up">Pronta para Mudar Sua Vida?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Não deixe para depois o que pode transformar seu presente. As vagas
+            são limitadas!</p>
+        <a href="#" class="cta-button" data-aos="zoom-in" data-aos-delay="200">Quero Me Inscrever Agora</a>
+    </div>
+
+    <!-- Seção Conteúdo do Curso -->
+    <div class="container my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">O Que Você Vai Aprender</h2>
+        <div class="row">
+            <div class="col-12 col-md-6 mb-4" data-aos="fade-right">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Módulo 1: Redescobrindo a Si Mesma</li>
+                    <li class="list-group-item">Módulo 2: Técnicas de Autoestima e Confiança</li>
+                    <li class="list-group-item">Módulo 3: Segredos para uma Vida Íntima Plena</li>
+                    <li class="list-group-item">Módulo 4: Comunicação Eficaz nos Relacionamentos</li>
+                    <li class="list-group-item">Módulo 5: Mantendo a Chama Acesa</li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-6" data-aos="fade-left">
+                <img src="https://via.placeholder.com/500x300" alt="Conteúdo do Curso" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Bônus -->
+    <div class="container bonus my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Bônus Exclusivos ao se Inscrever Hoje</h2>
+        <div class="row text-center">
+            <!-- E-book -->
+            <div class="col-12 col-md-4 mb-4" data-aos="flip-left" data-aos-delay="100">
+                <div class="bonus-icon">
+                    <i class="fas fa-book-open fa-3x"></i> <!-- Ícone de E-book -->
+                </div>
+                <h5 class="mt-3">E-book "Segredos da Feminilidade"</h5>
+                <p>Descubra dicas exclusivas para potencializar sua essência feminina.</p>
+            </div>
+            <!-- Grupo VIP -->
+            <div class="col-12 col-md-4 mb-4" data-aos="flip-left" data-aos-delay="200">
+                <div class="bonus-icon">
+                    <i class="fas fa-users fa-3x"></i> <!-- Ícone de Grupo VIP -->
+                </div>
+                <h5 class="mt-3">Acesso ao Grupo VIP</h5>
+                <p>Participe de uma comunidade exclusiva de mulheres determinadas a evoluir.</p>
+            </div>
+            <!-- Mentoria Individual -->
+            <div class="col-12 col-md-4 mb-4" data-aos="flip-left" data-aos-delay="300">
+                <div class="bonus-icon">
+                    <i class="fas fa-video fa-3x"></i> <!-- Ícone de Consultoria -->
+                </div>
+                <h5 class="mt-3">Mentoria Individual</h5>
+                <p>Uma sessão personalizada com Ana Cristina para direcionar sua jornada.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Seção Preço e Oferta -->
+    <div class="container pricing text-center my-5" data-aos="fade-up">
+        <h2>A Transformação que Você Merece por Apenas <span
+                style="text-decoration: line-through; color: #666;">€199,90</span> <strong>€9,90</strong></h2>
+        <p>Acesso Imediato, Bônus Exclusivos e Garantia Incondicional de 7 Dias</p>
+        <a href="#" class="btn btn-primary btn-lg">Quero Garantir Minha Vaga</a>
+        <p class="mt-3"><em>Oferta Especial por Tempo Limitado. Aproveite Agora!</em></p>
+    </div>
+
+    <!-- Seção Perguntas Frequentes -->
+    <div class="container faq my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Ainda Tem Dúvidas?</h2>
+        <div class="accordion" id="faqAccordion">
+            <!-- Pergunta 1 -->
+            <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="accordion-header" id="faqHeadingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapseOne">
+                        O Curso é Realmente para Mim?
+                    </button>
+                </h2>
+                <div id="faqCollapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        Sim! Se você deseja melhorar sua autoestima, relacionamentos e vida íntima, este curso foi feito
+                        para você.
+                    </div>
+                </div>
+            </div>
+            <!-- Pergunta 2 -->
+            <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="accordion-header" id="faqHeadingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapseTwo">
+                        E Se Eu Não Gostar do Curso?
+                    </button>
+                </h2>
+                <div id="faqCollapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Oferecemos uma garantia incondicional de 7 dias. Se não estiver satisfeita, devolvemos seu
+                        investimento sem perguntas.
+                    </div>
+                </div>
+            </div>
+            <!-- Pergunta 3 -->
+            <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="accordion-header" id="faqHeadingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#faqCollapseThree">
+                        Como Funciona o Acesso ao Curso?
+                    </button>
+                </h2>
+                <div id="faqCollapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        Após a confirmação do pagamento, você receberá um e-mail com os dados de acesso à nossa
+                        plataforma online.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Conheça a Instrutora -->
+    <div class="container instructor my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Conheça Ana Cristina</h2>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4 text-center" data-aos="zoom-in">
+                <img src="./images/ana_cristina.jpg" alt="Instrutora" class="img-fluid rounded-circle" width="200px">
+            </div>
+            <div class="col-12 col-md-8" data-aos="fade-left">
+                <p>Ana Cristina é especialista em saúde íntima e empoderamento feminino. Com mais de uma década de
+                    experiência, ela dedicou sua vida a ajudar mulheres a resgatar sua autoestima e viver
+                    relacionamentos mais plenos e felizes.</p>
+                <p>Com um método único e comprovado, Ana já impactou a vida de milhares de mulheres, guiando-as em uma
+                    jornada de autoconhecimento e transformação.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção Prova Social -->
+    <div class="container my-5">
+        <h2 class="text-center section-title" data-aos="fade-up">Mais de 5.000 Mulheres Já Transformaram Suas Vidas</h2>
+        <p class="text-center">Avaliação Média: <strong>4.9/5</strong></p>
+        <div class="text-center" data-aos="zoom-in">
+            <img src="./images/estrelas" alt="Avaliações" class="img-fluid" width="300px" height="50px">
+        </div>
+    </div>
+
+    <!-- Seção Chamada Final para Ação -->
+    <div class="container text-center my-5">
+        <h2 data-aos="fade-up">A Decisão Está em Suas Mãos</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Não deixe que a oportunidade passe. Dê o primeiro passo rumo à vida
+            que você sempre desejou.</p>
+        <a href="#" class="btn btn-primary btn-lg" data-aos="zoom-in" data-aos-delay="200">Quero Me Transformar
+            Agora</a>
+    </div>
+
+    <!-- Seção Contato -->
+    <div class="container my-5" data-aos="fade-up">
+        <h2 class="text-center section-title">Precisa de Ajuda?</h2>
+        <p class="text-center">Estamos aqui para você. Envie um e-mail para <a
+                href="mailto:suporte@intimflex.com">suporte@intimflex.com</a> e responderemos o mais rápido possível.
+        </p>
+    </div>
+
+    <!-- Seção Rodapé -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 Curso Intimflex. Todos os direitos reservados.</p>
+            <p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Uso</a>
+            </p>
+            <div class="mt-3">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+
+</html>
